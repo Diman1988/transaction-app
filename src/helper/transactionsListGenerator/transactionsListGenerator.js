@@ -32,7 +32,10 @@ function transactionsListGenerator(customers, count) {
 
     const threeMonthsAgo = new Date();
     threeMonthsAgo.setMonth(threeMonthsAgo.getMonth() - 3);
-    const timestamp = faker.date.between(threeMonthsAgo, new Date());
+    const timestamp = faker.date.between({
+      from: threeMonthsAgo,
+      to: new Date(),
+    });
 
     const transaction = transactionGenerator(customer, amount, timestamp);
     if (transaction) {

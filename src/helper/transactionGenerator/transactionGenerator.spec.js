@@ -13,7 +13,7 @@ describe("Transaction Generator", () => {
 
     const threeMonthsAgo = new Date();
     threeMonthsAgo.setMonth(threeMonthsAgo.getMonth() - 3);
-    timestamp = faker.date.between(threeMonthsAgo, new Date());
+    timestamp = faker.date.between({ from: threeMonthsAgo, to: new Date() });
   });
 
   it("should generate a transaction", () => {
