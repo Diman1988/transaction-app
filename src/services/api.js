@@ -75,7 +75,7 @@ class FakeFetch {
           data,
         };
         resolve(response);
-      }, 1000);
+      }, 3000);
     });
   }
 }

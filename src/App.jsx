@@ -31,7 +31,7 @@ function App() {
     <>
       {!isLoaded && (
         <div className={styles.loadingContainer}>
-          <p className={styles.loading}>Loading</p>
+          <p className={styles.loading}>Loading data</p>
         </div>
       )}
       <div>
