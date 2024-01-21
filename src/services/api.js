@@ -22,7 +22,7 @@ class FakeFetch {
   }
   init() {
     this.customers = customersListGenerator(100);
-    this.transactions = transactionsListGenerator(this.customers, 100);
+    this.transactions = transactionsListGenerator(this.customers, 100000);
   }
   fetch(url) {
     if (!url) return this.#response(undefined);
