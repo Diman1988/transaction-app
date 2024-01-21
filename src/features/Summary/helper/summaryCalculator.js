@@ -3,7 +3,7 @@ import pointsCalculator from "../../../helper/pointsCalculator";
 export function summaryCalculator(transactions) {
   const perMonth = {};
   let totalPoints = 0;
-
+  console.clear();
   transactions.forEach((transaction) => {
     const monthKey = transaction.timestamp.getMonth();
     const calendarMonth = monthKey + 1;
@@ -11,7 +11,10 @@ export function summaryCalculator(transactions) {
     const points = pointsCalculator(amount);
     totalPoints += points;
 
-    perMonth[calendarMonth] = points;
+    if (!perMonth[calendarMonth]) {
+      perMonth[calendarMonth] = 0;
+    }
+    perMonth[calendarMonth] += points;
   });
 
   return { perMonth, totalPoints };

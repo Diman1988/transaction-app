@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { summaryCalculator } from "./helper/perMonthCalculator";
+import { summaryCalculator } from "./helper/summaryCalculator";
 import styles from "./Summary.module.css";
 
 export function Summary({ transactions, activeCustomerId }) {
