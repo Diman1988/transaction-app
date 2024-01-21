@@ -1,5 +1,6 @@
 .active {
-  color: red;
+  color: rgb(123, 0, 255);
+  font-weight: 700;
 }
 
 .customers {

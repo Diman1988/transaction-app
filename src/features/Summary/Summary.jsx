@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import { summaryCalculator } from "./helper/perMonthCalculator";
 import styles from "./Summary.module.css";
 
-export function Summary({ transactions }) {
+export function Summary({ transactions, activeCustomerId }) {
   const { perMonth, totalPoints } = useMemo(
     () => summaryCalculator(transactions),
     [transactions]
@@ -27,13 +27,16 @@ export function Summary({ transactions }) {
   return (
     <section className={styles.summary}>
       <h2>Summary</h2>
+      {!activeCustomerId && (
+        <p className={styles.selectText}>Select a customer</p>
+      )}
       {monthesValues.map((month) => (
-        <p>
+        <p key={month}>
           {monthes[month]}: {perMonth[month]}
         </p>
       ))}
       <p>
-        <em>Rewards: {totalPoints}</em>
+        <em className={styles.rewards}>Rewards: {totalPoints}</em>
       </p>
     </section>
   );

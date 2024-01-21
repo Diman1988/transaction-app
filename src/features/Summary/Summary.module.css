@@ -3,3 +3,26 @@
   flex-direction: column;
   margin-right: 3vw;
 }
+
+.selectText {
+  margin-bottom: 10px;
+  animation: select-animation 4s infinite;
+}
+
+@keyframes select-animation {
+  0% {
+    color: black;
+  }
+  50% {
+    color: rgb(195, 0, 255);
+  }
+  100% {
+    color: black;
+  }
+}
+
+.rewards {
+  display: block;
+  font-weight: bold;
+  margin-top: 20px;
+}
