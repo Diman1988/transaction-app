@@ -9,16 +9,20 @@ export function TransactionsList({ transactions }) {
       {transactions.length === 0 && <p>No transactions</p>}
       {transactions.length > 0 && (
         <table border={1}>
-          <tr>
-            <th>Date</th>
-            <th>Amount</th>
-            <th>Status</th>
-            <th>Award Points</th>
-          </tr>
-          {transactions &&
-            transactions.map((transaction) => (
-              <Transaction key={transaction.id} transaction={transaction} />
-            ))}
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Amount</th>
+              <th>Status</th>
+              <th>Award Points</th>
+            </tr>
+          </thead>
+          <tbody>
+            {transactions &&
+              transactions.map((transaction) => (
+                <Transaction key={transaction.id} transaction={transaction} />
+              ))}
+          </tbody>
         </table>
       )}
     </section>
