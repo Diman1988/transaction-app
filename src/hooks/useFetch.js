@@ -14,7 +14,7 @@ export function useFetch({ url }) {
           setCustomers(response.data);
         }
       } catch (error) {
-        console.log("Request to API failed:", error);
+        console.error("Request to API failed:", error);
         setCustomers([]);
       }
     };
